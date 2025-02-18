@@ -1,0 +1,10 @@
+// A program that adds 10 to any entered number
+#include <stdio.h>
+int main() {
+    int number;
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    number +10= number;
+    printf("The number after adding 10 is: %d\n", number);
+return 0;
+}
