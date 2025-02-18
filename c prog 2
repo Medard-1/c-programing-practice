@@ -1,0 +1,10 @@
+// A c program that multiplies 2 to any entered number
+#include <stdio.h>
+int main() {
+    int number;
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    number * 2= number;
+    printf("The number after multiplying by 2 is: %d\n", number);
+return 0;
+}
