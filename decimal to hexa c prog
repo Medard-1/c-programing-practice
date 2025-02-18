@@ -1,0 +1,37 @@
+// A c program that converts any decimal number entered to hexadecimal
+#include <stdio.h>
+void decimalToHexadecimal(int decimal) {
+    int remainder;
+    char hex[50]; // To store the hexadecimal equivalent
+    int index = 0;
+// Dividing the decimal number by 16
+    while (decimal != 0) {
+        remainder = decimal % 16;  // Get the remainder (this is the next digit in hexadecimal)
+ // For remainders 10 to 15, use A to F
+        if (remainder < 10) {
+            hex[index] = remainder + '0';
+        } else {
+            hex[index] = remainder - 10 + 'A';
+        }
+// Print the division step (quotient and remainder)
+        printf("Dividing: %d / 16 = %d, Remainder = %d\n", decimal, decimal / 16, remainder);
+ decimal = decimal / 16;  // Update decimal to the quotient
+        index++;
+    }
+// Print the result in reverse as we start from the least significant digit
+    printf("Hexadecimal: ");
+    for (int i = index - 1; i >= 0; i--) {
+        printf("%c", hex[i]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int decimal;
+ // Take input from the user
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimal);
+// Call the function to convert to hexadecimal
+    decimalToHexadecimal(decimal);
+return 0;
+}
